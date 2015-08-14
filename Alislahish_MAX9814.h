@@ -62,6 +62,7 @@ enum class  MAX9814RA{
 
 class Alislahish_MAX9814 : public ICUsingMCP23017 {
 	public:
+		Alislahish_MAX9814();
 		Alislahish_MAX9814(uint8_t raPin, uint8_t gainPin);
 		void setGain(MAX9814Gain gain);
 		void setRA(MAX9814RA ra);
