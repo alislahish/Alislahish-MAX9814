@@ -29,6 +29,19 @@ void Alislahish_MAX9814::setRA(MAX9814RA ra){
 }
 
 /**
+* getter for _ra
+*/
+MAX9814Gain  Alislahish_MAX9814::getGain(){
+	return _gain;
+}
+/**
+* getter for _gain
+*/
+MAX9814RA  Alislahish_MAX9814::getRA(){
+	return _ra;
+}
+
+/**
 * return human readable gain
 */
 char* Alislahish_MAX9814::printGain(){

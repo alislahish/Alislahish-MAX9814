@@ -77,6 +77,8 @@ class Alislahish_MAX9814 : public ICUsingMCP23017 {
 		Alislahish_MAX9814(uint8_t raPin, uint8_t gainPin);
 		void setGain(MAX9814Gain gain);
 		void setRA(MAX9814RA ra);
+		MAX9814Gain getGain();
+		MAX9814RA getRA();
 		char* printGain();
 		char* printRA();
 	private:
