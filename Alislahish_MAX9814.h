@@ -42,19 +42,30 @@
 
 //allowable gain settings for max9814
 enum class MAX9814Gain{
-  DB40,//0x28,
-  DB50,//0x32,
-  DB60//0x3C
+	DB40,//0x28,
+	DB50,//0x32,
+	DB60//0x3C
 };
-
-//human-readable gain
-//String MAX9814GainTypes[3];
+#define NUM_MAX9814_GAIN_LEVELS 3
+//human-readable gain types
+static const char* MAX9814GainTypes[NUM_MAX9814_GAIN_LEVELS] = {
+	"40 dB",
+	"50 dB",
+	"60 dB"
+};
 
 //allowable release/attack ratios for MAX9814
 enum class  MAX9814RA{
-  RA500, //0x1F4,
-  RA2000,//0x7D0,
-  RA4000 //0xFA0  
+	RA500, //0x1F4,
+	RA2000,//0x7D0,
+	RA4000 //0xFA0  
+};
+#define NUM_MAX9814_RA_RATIOS 3
+//human-readable RA types
+static const char* MAX9814RATypes[NUM_MAX9814_RA_RATIOS]= {
+	"500:1",
+	"2000:1",
+	"4000:1"
 };
 
 //human-readable release/attack ratio
@@ -66,8 +77,8 @@ class Alislahish_MAX9814 : public ICUsingMCP23017 {
 		Alislahish_MAX9814(uint8_t raPin, uint8_t gainPin);
 		void setGain(MAX9814Gain gain);
 		void setRA(MAX9814RA ra);
-		String printGain();
-		String printRA();
+		char* printGain();
+		char* printRA();
 	private:
 		MAX9814Gain _gain;
 		MAX9814RA _ra;

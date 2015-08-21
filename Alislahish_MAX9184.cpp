@@ -1,18 +1,5 @@
 #include "Alislahish_MAX9814.h"
 
-//human-readable RA types
-String MAX9814RATypes[]= {
-	"500:1",
-	"2000:1",
-	"4000:1"
-};
-
-//human-readable gain types
-String MAX9814GainTypes[] = {
-	"40 dB",
-	"50 dB",
-	"60 dB"
-};
 
 Alislahish_MAX9814::Alislahish_MAX9814()
 {}
@@ -44,16 +31,16 @@ void Alislahish_MAX9814::setRA(MAX9814RA ra){
 /**
 * return human readable gain
 */
-String Alislahish_MAX9814::printGain(){
-	return MAX9814GainTypes[static_cast<int>(_gain)];
+char* Alislahish_MAX9814::printGain(){
+	return (char*)MAX9814GainTypes[static_cast<int>(_gain)];
 }
 
 
 /**
 * return human readable release/attack ratio
 */
-String Alislahish_MAX9814::printRA(){
-	return MAX9814RATypes[static_cast<int>(_ra)];
+char* Alislahish_MAX9814::printRA(){
+	return (char*)MAX9814RATypes[static_cast<int>(_ra)];
 }
 
 void Alislahish_MAX9814::setPins(){
